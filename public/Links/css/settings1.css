@@ -1,0 +1,30 @@
+input[type='file'] {
+  display: none;
+}
+
+.search-box #result_country {
+  display: none;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.search-box #result_country p {
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.search-box #result_country p:hover {
+  background-color: #6478eb !important;
+  color: white !important;
+}
+
+.search-box #result_country p:last-child {
+  margin-bottom: 0% !important;
+}
+
+.upd_img .up-img_btn {
+  display: none !important;
+}
