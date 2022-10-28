@@ -143,7 +143,7 @@
         //validate email
         const re_validate_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/i;
         //validate name
-        const re_validate_name = /^([A-Za-zéàë]{5,30} ?)+$/i;
+        //const re_validate_name = /^([A-Za-zéàë]{5,30} ?)+$/i;
         //sign_up
         document.forms[0].onsubmit = function(event) {
             let email = false;
@@ -152,7 +152,7 @@
             let name = false;
             let error = "";
             let contains_err;
-            if (re_validate_name.test(inp[1].value)) {
+            if (inp[1].value!="") {
                 name = true;
                 inp[1].classList.replace("border-danger", "border-nor");
                 icons[0].classList.replace("text-danger", "text-nor");
