@@ -25,7 +25,7 @@
     @include('includes.loading')
     <dev class="page h-100 w-100 d-flex flex-column" style="opacity:0 !important">
     @include('includes.header')
-    <main class="w-100" style="margin-top:68px ;">
+    <main class="w-100" style="margin-top:68px ;min-height: 71vh !important;">
         <section class="w-100" id="introduction" style="height: 580px;">
             <div class="container text-white d-flex py-5 flex-lg-row  h-100" style="z-index:1027">
                 <div class="information_user d-flex justify-content-center justify-content-lg-start" style="width:350px ;">

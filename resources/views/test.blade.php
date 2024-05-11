@@ -18,19 +18,20 @@
     <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.33/sweetalert2.css" />
     <style>
-    v-cloak{
-        display: none;
-    }
+        v-cloak {
+            display: none;
+        }
     </style>
 </head>
 
-<body class="w-100 test" style="height:110vh;overflow:hidden;">
+<body class="w-100 test" style="height:110vh;">
     @include('includes.loading')
 
-    <div id="app" class="w-100 h-100 page"  style="opacity:0 !important;" v-cloak>
+    <div id="app" class="w-100 h-100 page" style="opacity:0 !important;" v-cloak>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.33/sweetalert2.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
+
 </html>

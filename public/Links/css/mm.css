@@ -339,9 +339,9 @@ body.dark-mode .definition .difinition_text {
 }
 
 @media screen and (min-width: 576px) {
-    #app .main .main_test_result img{
+    /* #app .main .main_test_result img{
         width: max-content !important;
-    }
+    } */
     #app{
         height:100% !important;
         width: 100% !important;
@@ -374,11 +374,11 @@ body.dark-mode .definition .difinition_text {
 
 @media screen and (min-width: 768px) {
     #app .wrapper .item:nth-child(odd),#app .check .item:nth-child(odd){
-        padding-bottom: 0% !important;
+        /* padding-bottom: 0% !important; */
         padding-right: 0.5rem !important;
     }
     #app .wrapper .item:nth-child(even),#app .check .item:nth-child(even){
-        padding-bottom: 0% !important;
+        /* padding-bottom: 0% !important; */
         padding-left: 0.5rem !important;
     }
     #app .question .question-number,#app .question .question-text{
@@ -391,7 +391,7 @@ body.dark-mode .definition .difinition_text {
         height: 100vh !important;
     }
     body.test .main{
-        height: 85% !important;
+        height: 77% !important;
     }
     body.test .image-svg{
         height: 30% !important;

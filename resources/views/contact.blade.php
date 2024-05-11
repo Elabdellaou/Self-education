@@ -20,9 +20,9 @@
     @include('includes.loading')
     <dev class="page w-100 d-flex flex-column h-100" style="opacity:0 !important">
     @include('includes.header')
-    <main class="w-100" style="margin-top:68px ;">
+    <main class="w-100" style="margin-top:68px ;min-height: 71vh !important;">
         <div class="container ps-5">
-            <div class="text-contact pt-5 pb-4">
+            <div class="text-contact pt-5 pb-2 pb-md-4">
                 <p class="title-contact text-center fs-2">
                     Contact Us
                 </p>

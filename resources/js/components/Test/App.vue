@@ -1,5 +1,5 @@
 <template>
-    <div class="w-100 d-flex h-100 flex-column" style="overflow: hidden">
+    <div class="w-100 d-flex h-100 flex-column">
         <div class="w-100 d-flex flex-column">
             <div
                 class="header pt-0 px-5 w-100 d-flex flex-row justify-content-between"
@@ -75,7 +75,7 @@
                 <checkVue v-else :answers="answers"></checkVue>
             </div>
         </div>
-        <div class="w-100 footer-test">
+        <div class="w-100 footer-test my-4 mt-5 mt-md-3 mb-md-3">
             <div class="container d-flex flex-row justify-content-between py-3">
                 <button
                     class="btn btn-war border-0 fw-bold shadow-primary btn-primary rounded-pill px-4"

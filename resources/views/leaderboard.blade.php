@@ -19,50 +19,57 @@
 <body class=" w-100 global" id="body_leader" style="height: max-content;overflow:hidden !important">
     @include('includes.loading')
     <dev class="page h-100 w-100 d-flex flex-column" style="opacity:0 !important">
-    @include('includes.header')
-    <Main class="w-100" style="margin-top:68px;">
-        <div class="container pt-3 d-flex justify-content-center">
-            <div id="content-user" class="content w-75 px-3">
-                <div class="footer_leader pb-3">
-                    <div class=" fw-bold fs-4 pt-2" id="title_footer_leader" style="color:#6c757d !important;">
-                        Leaderboard
-                    </div>
-                    <div class="body_footer_leader row row-cols-1 row-cols-sm-3 ">
-                        <div class="btn level1 py-4 mb-2 mb-sm-0 py-md-5 fs-3 fw-bold text-dark text-center" data-niveau="1">Level 1</div>
-                        <div class="btn level2 py-4 py-md-5 mb-2 mb-sm-0 fs-3 fw-bold text-dark text-center" data-niveau="2">Level 2</div>
-                        <div class="btn level3 py-4 py-md-5 fs-3 fw-bold text-dark text-center" data-niveau="3">Level 3</div>
-                    </div>
-                </div>
-                <div class="title_leaders fw-bold pt-3 fs-4" id="title_leaders"
-                    style="color:#6c757d !important;height:min-content; ">
-                    <p class="title_l pb-2"><span id="leader_with">Global</span> <i class="fa-solid fa-angle-right"></i>
-                        Top 10</p>
-                </div>
-                <div id="result">
-                    @for ($i = 1;$i<count($users)+1&& $i < 11; $i++)
-                    <div class="position-relative  d-flex flex-row py-2" id="leaders" style="overflow:hidden;">
-                        <span id="top_ranking" class="ps-3 pe-5 pt-2 fw-bold fs-4">
-                            {{ $i<10?'0'.$i:$i }}
-                        </span>
-                        <div id="user_image" class="h-100 py-1">
-                            <img src="../Images/users/{{ $users[$i-1]->image }}" alt="Image user"
-                                style="background-size:cover;width:48px; max-height:48px !important;"
-                                class="h-100 rounded-circle">
+        @include('includes.header')
+        <Main class="w-100" style="margin-top:68px;">
+            <div class="container pt-3 d-flex justify-content-center">
+                <div id="content-user" class="content w-75 px-3">
+                    <div class="footer_leader pb-3">
+                        <div class=" fw-bold fs-4 pt-2" id="title_footer_leader" style="color:#6c757d !important;">
+                            Leaderboard
                         </div>
-                        <div id="name_country" class="h-100 ps-4 pt-3" style="line-height: 2px;font-size:1.2rem;">
-                            <p id="user_name" class="pb-1">{{ $users[$i-1]->name }}</p>
-                            <p id="user_country" style="color:#6c757d;font-size:1rem;">{{ $users[$i-1]->country }}</p>
-                        </div>
-                        <div id="toptime_user" class="position-absolute end-0 pe-3 py-3">
-                            <span>{{ $users[$i-1]->time_passed }}</span>
+                        <div class="body_footer_leader row row-cols-1 row-cols-sm-3 ">
+                            <div class="btn level1 py-4 mb-2 mb-sm-0 py-md-5 fs-3 fw-bold text-dark text-center"
+                                data-niveau="1">Level 1</div>
+                            <div class="btn level2 py-4 py-md-5 mb-2 mb-sm-0 fs-3 fw-bold text-dark text-center"
+                                data-niveau="2">Level 2</div>
+                            <div class="btn level3 py-4 py-md-5 fs-3 fw-bold text-dark text-center" data-niveau="3">
+                                Level 3</div>
                         </div>
                     </div>
-                    @endfor
+                    <div class="title_leaders fw-bold pt-3 fs-4" id="title_leaders"
+                        style="color:#6c757d !important;height:min-content; ">
+                        <p class="title_l pb-2"><span id="leader_with">Global</span> <i
+                                class="fa-solid fa-angle-right"></i>
+                            Top 10</p>
+                    </div>
+                    <div id="result">
+                        @for ($i = 1; $i < count($users) + 1 && $i < 11; $i++)
+                            <div class="position-relative  d-flex flex-row py-2" id="leaders"
+                                style="overflow:hidden;">
+                                <span id="top_ranking" class="ps-3 pe-5 pt-2 fw-bold fs-4">
+                                    {{ $i < 10 ? '0' . $i : $i }}
+                                </span>
+                                <div id="user_image" class="h-100 py-1">
+                                    <img src="../Images/users/{{ $users[$i - 1]->image }}" alt="Image user"
+                                        style="background-size:cover;width:48px; max-height:48px !important;"
+                                        class="h-100 rounded-circle">
+                                </div>
+                                <div id="name_country" class="h-100 ps-4 pt-3"
+                                    style="line-height: 2px;font-size:1.2rem;">
+                                    <p id="user_name" class="pb-1">{{ $users[$i - 1]->name }}</p>
+                                    <p id="user_country" style="color:#6c757d;font-size:1rem;">
+                                        {{ $users[$i - 1]->country }}</p>
+                                </div>
+                                <div id="toptime_user" class="position-absolute end-0 pe-3 py-3">
+                                    <span>{{ $users[$i - 1]->time_passed }}</span>
+                                </div>
+                            </div>
+                        @endfor
+                    </div>
                 </div>
             </div>
-        </div>
-    </Main>
-    @include('includes.footer')
+        </Main>
+        @include('includes.footer')
     </dev>
     <script src="{{ asset('Links/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('Links/js/vanila-tilt.js') }}"></script>
@@ -84,7 +91,7 @@
                 replacedata($('.body_footer_leader div.active').data('niveau'));
             });
 
-            function replacedata(id='') {
+            function replacedata(id = '') {
                 /*$.ajax({
                     method: "POST",
                     url: "../Source/php/Tools/leaders.php",
@@ -95,16 +102,26 @@
                         $("#result").html(data);
                     }
                 });*/
-                axios.get('/users/'+id+'').then(response=>{
-                    let i=1;
+                axios.get('/users/' + id + '').then(response => {
+                    let i = 1;
                     $("#result").html('');
-                    let res=''
+                    let res = ''
                     for (data of response.data) {
-                        res+='<div class="position-relative  d-flex flex-row py-2" id="leaders" style="overflow:hidden;"><span id="top_ranking" class="ps-3 pe-5 pt-2 fw-bold fs-4">'+(i<10?('0'+i).toString():i)+'</span><div id="user_image" class="h-100 py-1"><img src="../Images/users/'+data.image+'" alt="Image user" style="background-size:cover;width:48px; max-height:48px !important;" class="h-100 rounded-circle"></div><div id="name_country" class="h-100 ps-4 pt-3" style="line-height: 2px;font-size:1.2rem;"><p id="user_name" class="pb-1">'+data.name+'</p><p id="user_country" style="color:#6c757d;font-size:1rem;">'+data.country+'</p></div><div id="toptime_user" class="position-absolute end-0 pe-3 py-3"><span>'+(id!=''?data.session_time_passed:data.time_passed)+'</span></div></div>';
+                        res +=
+                            '<div class="position-relative  d-flex flex-row py-2" id="leaders" style="overflow:hidden;"><span id="top_ranking" class="ps-3 pe-5 pt-2 fw-bold fs-4">' +
+                            (i < 10 ? ('0' + i).toString() : i) +
+                            '</span><div id="user_image" class="h-100 py-1"><img src="../Images/users/' +
+                            data.image +
+                            '" alt="Image user" style="background-size:cover;width:48px; max-height:48px !important;" class="h-100 rounded-circle"></div><div id="name_country" class="h-100 ps-4 pt-3" style="line-height: 2px;font-size:1.2rem;"><p id="user_name" class="pb-1">' +
+                            data.name + '</p><p id="user_country" style="color:#6c757d;font-size:1rem;">' +
+                            data.country +
+                            '</p></div><div id="toptime_user" class="position-absolute end-0 pe-3 py-3"><span>' +
+                            (id != '' ? data.session_time_passed : data.time_passed) +
+                            '</span></div></div>';
                         i++
                     }
                     $("#result").html(res);
-                }).catch(error=>{
+                }).catch(error => {
                     console.log(error)
                 })
             }
