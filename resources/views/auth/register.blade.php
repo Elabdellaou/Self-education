@@ -38,7 +38,7 @@
                     <div class="alert alert-danger alert-dismissible fade show mb-3" role="alert"
                         style="display:<?=$errors->any()?'block':'none' ?> !important">
                         <strong>Error! </strong>
-                        @if ($errors->has('name'))
+                        {{-- @if ($errors->has('name'))
                         <span>Fill in the name (use of special characters is prohibited).</span>
                        @elseif ($errors->has('email'))
                        <span>example : username@example.com.</span>
@@ -46,7 +46,8 @@
                        <span>Please enter a more secure password (more than 8 chars, number and special character).</span>
                        @else
                        <span>Confirm password.</span>
-                        @endif
+                        @endif --}}
+                        <span>{{ $errors->first() }}</span>
                     </div>
                     @csrf
 
@@ -85,8 +86,8 @@
                     </button>
                 </form>
             </div>
-            <p class="text-muted text-end position-absolute start-50"
-                style="top:93% !important; transform:translateX(-50%)">&copy; 2022 Self Education </p>
+            <p class="text-muted text-end position-absolute start-50 d-none d-md-block"
+                style="top:93% !important; transform:translateX(-50%)">&copy; 2024 Self Education </p>
         </div>
         <div class="panels position-absolute top-0">
             <div class="panel h-75 panel-left position-absolute top-0">

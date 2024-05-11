@@ -60,7 +60,7 @@
                     <p class="mt-1 text-end"><a class="fst-normal fp fw-semibold" href="{{ route('Forgot-password') }}">Forget password?</a></p>
                 </form>
             </div>
-            <p class="text-muted text-end position-absolute start-50" style="top:93% !important; transform:translateX(-50%)">&copy; 2022 Self Education </p>
+            <p class="text-muted text-end position-absolute start-50 d-none d-md-block" style="top:93% !important; transform:translateX(-50%)">&copy; 2024 Self Education </p>
         </div>
         <div class="panels position-absolute top-0">
             <div class="panel h-75 panel-right position-absolute top-0">

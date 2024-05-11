@@ -116,7 +116,7 @@
                                                                                     </tr>
                                                                                     <tr style="border-collapse:collapse">
                                                                                         <td align="center" style="padding:0;Margin:0;padding-bottom:15px">
-                                                                                            <p style="Margin:auto;line-height:15px;color:#333333;font-size:10px">© 2022 Self Education.</p>
+                                                                                            <p style="Margin:auto;line-height:15px;color:#333333;font-size:10px">© 2024 Self Education.</p>
                                                                                         </td>
                                                                                     </tr>
                                                                                 </tbody>

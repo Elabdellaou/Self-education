@@ -55,9 +55,9 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'country'=>['string','max:255','regex:/^([A-Za-zéàë]{4,30} ?)+$/i'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users','regex:/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/i'],
-            'password' => ['required', 'string', 'min:8', 'confirmed','regex:/^(?=.*\d)(?=.*[a-z])(?=.*[!@#$%^&*]).{8,16}$/i'],
+            'country' => ['string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+            'password' => ['required', 'string', 'min:8', 'confirmed', 'regex:/^(?=.*\d)(?=.*[a-z])(?=.*[!@#$%^&*]).{8,16}$/i'],
         ]);
     }
 
@@ -69,19 +69,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $u=User::create([
+        $u = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'country' => $data['country'],
             'password' => Hash::make($data['password']),
         ]);
-        Session::create(['user_id'=>$u->id,'level_id'=>1]);
+        Session::create(['user_id' => $u->id, 'level_id' => 1]);
         Certificate::create([
-            'user_id'=>$u->id,
-            'language_id'=>1,
-            'certificate_id'=>\Ramsey\Uuid\Uuid::uuid4()->toString(),
+            'user_id' => $u->id,
+            'language_id' => 1,
+            'certificate_id' => \Ramsey\Uuid\Uuid::uuid4()->toString(),
         ]);
-        Mail::to($u['email'])->send(new WelcomeMail($u));
+        Mail::to($u->email)->send(new WelcomeMail($u));
         return $u;
     }
 }

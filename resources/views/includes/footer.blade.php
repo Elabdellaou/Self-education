@@ -17,6 +17,6 @@
                     <i class="fa-brands fa-twitter"></i>
                 </a></li>
         </ul>
-        <p class=" w-100 text-muted text-center fs-5 mt-4">&copy; 2022 Self Education </p>
+        <p class=" w-100 text-muted text-center fs-5 mt-4">&copy; 2024 Self Education </p>
     </div>
 </footer>
